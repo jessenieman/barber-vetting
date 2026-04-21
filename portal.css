@@ -385,10 +385,10 @@
   margin-bottom: 4px;
 }
 .ans-row .q-col .q-txt {
-  font-family: var(--serif);
-  font-size: 16px;
+  font-family: var(--sans);
+  font-size: 15px;
   color: var(--ink-dim);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 .ans-row .a-col .a-val {
   font-size: 15px;
