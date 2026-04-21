@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Center City Barbers — Hiring Tool</title>
+  <link rel="icon" href="assets/logomark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .landing {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+    @media (max-width: 800px) { .landing { grid-template-columns: 1fr; } }
+    .tile {
+      position: relative;
+      overflow: hidden;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+      text-decoration: none;
+      color: var(--ink);
+      transition: all 200ms ease;
+      border-right: 1px solid var(--rule);
+    }
+    .tile:last-child { border-right: 0; }
+    .tile .bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.35) saturate(0.8);
+      transition: filter 400ms ease, transform 800ms ease;
+    }
+    .tile:hover .bg { filter: brightness(0.5) saturate(0.9); transform: scale(1.04); }
+    .tile .shade {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(10,11,9,0.5) 0%, rgba(10,11,9,0.1) 45%, rgba(10,11,9,0.9) 100%);
+    }
+    .tile > * { position: relative; z-index: 2; }
+    .tile .tile-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    .tile .brand-row { display: flex; align-items: center; gap: 12px; }
+    .tile .brand-row img { height: 36px; }
+    .tile .brand-row span { font-family: "Fraunces", serif; font-size: 15px; }
+    .tile .num {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 16px;
+      color: var(--sage);
+      letter-spacing: 0.02em;
+    }
+    .tile h1 {
+      font-family: "Fraunces", serif;
+      font-weight: 400;
+      font-size: clamp(52px, 6vw, 88px);
+      line-height: 0.94;
+      letter-spacing: -0.02em;
+      max-width: 520px;
+    }
+    .tile h1 em { font-style: italic; color: var(--sage); font-weight: 300; }
+    .tile p {
+      color: var(--ink-dim);
+      max-width: 440px;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-top: 18px;
+    }
+    .tile .arrow-cta {
+      margin-top: 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--ink);
+      padding: 14px 0;
+      border-top: 1px solid var(--rule-strong);
+      width: 100%;
+      justify-content: space-between;
+      transition: color 200ms ease;
+    }
+    .tile:hover .arrow-cta { color: var(--sage); }
+    .tile .arrow-cta .ar { font-family: "Fraunces", serif; font-size: 28px; letter-spacing: 0; transition: transform 200ms ease; }
+    .tile:hover .arrow-cta .ar { transform: translateX(6px); }
+    .center-divider {
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--bg);
+      padding: 10px 14px;
+      border: 1px solid var(--rule-strong);
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      z-index: 5;
+      font-family: var(--mono);
+    }
+    @media (max-width: 800px) { .center-divider { display: none; } }
+    .prelude {
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      margin-bottom: 16px;
+    }
+    .tile.right .prelude { color: var(--sage); }
+  </style>
+</head>
+<body>
+  <div class="landing">
+    <a class="tile left" href="Apply.html">
+      <div class="bg" style="background-image: url(assets/cut-1.jpg);"></div>
+      <div class="shade"></div>
+      <div class="tile-top">
+        <div class="brand-row">
+          <img src="assets/logomark.png" alt="" />
+          <span>Center City Barbers</span>
+        </div>
+        <span class="num">I</span>
+      </div>
+      <div>
+        <div class="prelude">For Candidates</div>
+        <h1>Join <em>the shop.</em></h1>
+        <p>20 questions, about 8 minutes. Bruce reads every application personally.</p>
+      </div>
+      <span class="arrow-cta">Start application <span class="ar">→</span></span>
+    </a>
+
+    <a class="tile right" href="Review.html">
+      <div class="bg" style="background-image: url(assets/shop-4.jpg);"></div>
+      <div class="shade"></div>
+      <div class="tile-top">
+        <div class="brand-row">
+          <img src="assets/logomark.png" alt="" />
+          <span>Center City Barbers</span>
+        </div>
+        <span class="num">II</span>
+      </div>
+      <div>
+        <div class="prelude">For Bruce</div>
+        <h1>Review <em>candidates.</em></h1>
+        <p>PIN-protected inbox. See flags, shortlist, work through the pile.</p>
+      </div>
+      <span class="arrow-cta">Open review portal <span class="ar">→</span></span>
+    </a>
+
+    <div class="center-divider">The hiring tool</div>
+  </div>
+</body>
+</html>
